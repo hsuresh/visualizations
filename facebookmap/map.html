@@ -1,0 +1,41 @@
+<html>
+<head>
+  <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geomap']});
+   google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = new google.visualization.DataTable();
+      addCountries(data);
+  };
+  
+function addCountries(data) {
+    data.addColumn('string', 'Country');
+    data.addColumn('number', '% of Population');
+    $.getJSON("facebook.json", function(facebookData){
+        data.addRows(31);
+        for (var i=0; i< facebookData.length; i++) {
+            data.setValue(i, 0, facebookData[i]["Country"]);
+            var facebookDensity = parseInt(facebookData[i]["Users"])/parseInt(facebookData[i]["Population"]) * 100;
+            data.setValue(i, 1, facebookDensity);
+        }
+      var options = {};
+      options['dataMode'] = 'regions';
+      options['width']='800px';
+      options['height']='500px';
+        options['colors']=[0xDAD7FF, 0x7B64FF, 0x3F00FF, 0x2E00F4, 0x100076];
+      var container = document.getElementById('map_canvas');
+      var geomap = new google.visualization.GeoMap(container);
+      geomap.draw(data, options);
+    });
+}
+  </script>
+</head>
+
+<body>
+  <div id='map_canvas'></div>
+</body>
+
+</html>
