@@ -1,0 +1,152 @@
+[
+	{
+		"Country": "US",
+		"Users": "125881220",
+		"Population": "310906000"
+	},
+	{
+		"Country": "United Kingdom",
+		"Users": "26543600",
+		"Population": "62008048"
+	},
+	{
+		"Country": "Indonesia",
+		"Users": "25912960",
+		"Population": "237556363"
+	} ,
+	{
+		"Country": "Turkey",
+		"Users": "22552540",
+		"Population": "72561312"
+	},
+	{
+		"Country": "France",
+		"Users": "18942220",
+		"Population": "65447374"
+	},
+	{
+		"Country": "Italy",
+		"Users": "16647260",
+		"Population": "60494632"
+	},
+	{
+		"Country": "Canada",
+		"Users": "15497900",
+		"Population": "34347000"
+	},
+	{
+		"Country": "Philippines",
+		"Users": "14600300",
+		"Population": "94013200"
+	},
+	{
+		"Country": "Mexico",
+		"Users": "12978440",
+		"Population": "112322757"
+	},
+	{
+		"Country": "Spain",
+		"Users": "10610080",
+		"Population": "46122169"
+	},
+	{
+		"Country": "India",
+		"Users": "10547240",
+		"Population": "1191430000"
+	},
+	{
+		"Country": "Argentina",
+		"Users": "10542040",
+		"Population": "40518951"
+	},
+	{
+		"Country": "Colombia",
+		"Users": "10226820",
+		"Population": "45757000"
+	},
+	{
+		"Country": "Germany",
+		"Users": "9949760",
+		"Population": "81802000"
+	},
+	{
+		"Country": "Australia",
+		"Users": "9009660",
+		"Population": "22558000"
+	},
+	{
+		"Country": "Malaysia",
+		"Users": "7317520",
+		"Population": "28250500"
+	},
+	{
+		"Country": "Chile",
+		"Users": "6944540",
+		"Population": "17164700"
+	},
+	{
+		"Country": "Taiwan",
+		"Users": "6745160",
+		"Population": "23150923"
+	},
+	{
+		"Country": "Venezuela",
+		"Users": "6686300",
+		"Population": "29033000"
+	},
+	{
+		"Country": "Brazil",
+		"Users": "4757200",
+		"Population": "190732694"
+	} ,
+	{
+		"Country": "Thailand",
+		"Users": "4216760",
+		"Population": "67070000"
+	},
+	{
+		"Country": "Sweden",
+		"Users": "3798020",
+		"Population": "9408028"
+	},
+	{
+		"Country": "Egypt",
+		"Users": "3581460",
+		"Population": "79455000"
+	},
+	{
+		"Country": "Belgium",
+		"Users": "3505920",
+		"Population": "10827519"
+	},
+	{
+		"Country": "Hong Kong",
+		"Users": "3408240",
+		"Population": "7061200"
+	},
+	{
+		"Country": "Israel",
+		"Users": "3006460",
+		"Population": "7670500"
+	},
+	{
+		"Country": "South Africa",
+		"Users": "2884080",
+		"Population": "49991300"
+	},
+	{
+		"Country": "Greece",
+		"Users": "2838700",
+		"Population": "11306183"
+	},
+	{
+		"Country": "Poland",
+		"Users": "2772540",
+		"Population": "38092000"
+	},
+	{
+		"Country": "Czech Rep",
+		"Users": "2686040",
+		"Population": "10515818"
+	}
+]
