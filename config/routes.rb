@@ -1,5 +1,6 @@
 Visualizations::Application.routes.draw do
   root :to=> 'listing#index'
+  match 'facebook_reach' => 'listing#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
