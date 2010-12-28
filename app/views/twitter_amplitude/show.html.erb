@@ -1,0 +1,78 @@
+<% content_for(:head) do %>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="/javascripts/processing.js"></script>
+<script src="/javascripts/init.js"></script>
+<script type="application/processing" target="main">
+/* @pjs preload="images/tweet.png; */
+var maxVal = function(obj) {
+  var values = [];
+  for(var k in obj) {
+    values.push(obj[k]);
+  }
+  return Math.max.apply(null, values);
+};
+
+var WIDTH = 900;
+var MIN_WIDTH_FOR_LINES = 8;
+var LINE_MIN_Y = 125;
+var LINE_MAX_Y = 375;
+var LINE_Y = (LINE_MIN_Y + LINE_MAX_Y)/2;
+var interval = WIDTH/24;
+
+var drawFrequenceFor = function(key, val, scale) {
+  parseInt(key);
+};
+
+var Segment = function(key, val, scale) {
+  this.number = parseInt(key);
+  this.frequency = val;
+  this.scale = scale;
+};
+
+Segment.prototype.draw = function(prevEndX) {
+  var startx = (interval * this.number);// + MIN_WIDTH_FOR_LINES/2;
+  var noOfLines = Math.round(this.scale*this.frequency)*2;
+  console.log("Frequency is: " + noOfLines + "Prev ends at: " + prevEndX.toString() + "; and startx: " + startx.toString());
+  var nextX = startx;
+  for(int i=0; i < noOfLines/2; i++) {
+    var nextX = startx + (interval/noOfLines)/2;
+    line(startx, LINE_Y, nextX, LINE_MIN_Y);
+    startx = nextX;
+    nextX = startx + (interval/noOfLines);
+    line(startx, LINE_MIN_Y, nextX, LINE_MAX_Y);
+    startx = nextX;
+    nextX = startx + (interval/noOfLines)/2;
+    line(startx, LINE_MAX_Y, nextX, LINE_Y);
+    startx = nextX;
+  }
+  return nextX;
+};
+
+Segment.prototype.drawLabel = function() {
+  var startx = (interval * this.number) + interval/2;
+  fill(0, 102, 153);
+  text(this.number.toString(), startx, 270);
+};
+
+var updateGraph = function(amp) {
+  var scale = (interval/MIN_WIDTH_FOR_LINES)/maxVal(amp);
+  var endx = 0;
+  for(var k in amp) {
+   var segment = new Segment(k, amp[k], scale);
+   stroke(243, 173, 81);
+   endx = segment.draw(endx);
+   segment.drawLabel();
+  }
+};
+
+void setup()
+{
+  background(0, 0, 0);
+  var amp = $.getJSON("<%= tweet_times_path(:format=>'json') %>", updateGraph);
+}
+
+</script>
+<% end %>
+<% content_for(:body) do %>
+  <canvas id="main" width="960" height="500"></canvas>
+<% end %>
